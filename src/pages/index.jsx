@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react';
-import Dashboard from '../components/Dashboard';
+import React from 'react';
+import DashboardPage from '../app/dashboard/app';
 
-const HomePage = () => {
+export default function Home() {
   return (
-    <div className="dashboard-container">
-      <Dashboard />
-    </div>
+    <main>
+      <DashboardPage />
+    </main>
   );
-};
-
-export default HomePage;
+}

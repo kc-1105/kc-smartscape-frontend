@@ -1,0 +1,56 @@
+.deviceCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 128px;
+    background-color: var(--card-dark);
+    border-radius: 8px;
+    padding: 16px;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .deviceCard:hover {
+    background-color: var(--card-hover);
+  }
+
+  .deviceCard.active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .deviceIcon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+  }
+
+  .deviceName {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .deviceStatus {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .statusYellow {
+    color: #fbbf24;
+  }
+
+  .statusGreen {
+    color: #34d399;
+  }
+
+  .statusBlue {
+    color: #60a5fa;
+  }
+
+  .statusPink {
+    color: #f472b6;
+  }
+

@@ -1,0 +1,17 @@
+.roomSection {
+    margin-bottom: 32px;
+  }
+
+  .roomTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #e5e7eb;
+    margin-bottom: 16px;
+  }
+
+  .deviceGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
