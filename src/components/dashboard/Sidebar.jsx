@@ -42,13 +42,7 @@ export function Sidebar() {
           )
         })}
       </nav>
-      <div className={styles.statusInfo}>
-        <p>Good evening 👋 Matt</p>
-        <p>The temperature inside is 73.5°F</p>
-        <p>Outside it is partlycloudy and 80°F</p>
-        <p>There are 0 lights on</p>
-        <p>It is Alex&apos;s night for cat chores</p>
-      </div>
+
     </div>
   )
 }

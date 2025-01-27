@@ -42,7 +42,7 @@ export function DashboardContent() {
 
       <RoomSection title="Master Bedroom">
         <DeviceCard icon={MdWindPower} title="Ceiling Fan" status="Medium" isActive statusColor="statusBlue" />
-        <DeviceCard icon={MdDoorFront} title="Winkey" status="Docked" />
+        <DeviceCard icon={MdDoorFront} title="Door" status="Locked" />
       </RoomSection>
 
       <RoomSection title="Front Door">
@@ -58,7 +58,7 @@ export function DashboardContent() {
         </button>
         <button className={styles.actionButton}>
           <MdTv />
-          Nighttime TV
+          Night time TV
         </button>
       </div>
     </>
