@@ -13,6 +13,7 @@ import {
   MdThermostat,
   MdGarage,
   MdWindPower,
+  MdSettingsRemote,
 } from "react-icons/md"
 import { DeviceCard } from "./DeviceCard"
 import { RoomSection } from "./RoomSection"
@@ -23,21 +24,21 @@ export function DashboardContent() {
     <>
       <RoomSection title="Living Room">
         <DeviceCard icon={MdLightbulb} title="Lamp" status="Off" />
-        <DeviceCard icon={MdAir} title="Fan Light" status="Off" />
+        <DeviceCard icon={MdAir} title="Heater" status="Off" />
         <DeviceCard icon={MdWindPower} title="Ceiling Fan" status="Low" isActive statusColor="statusYellow" />
         <DeviceCard icon={MdLightbulb} title="Pendant Lights" status="Off" />
         <DeviceCard icon={MdTv} title="Home Theater" status="SHIELD" statusColor="statusGreen" />
         <DeviceCard icon={MdNotifications} title="Media Volume" status="52.0%" statusColor="statusPink" />
-        <DeviceCard icon={MdTv} title="Remote" status="Shield TV" />
+        <DeviceCard icon={MdSettingsRemote} title="Remote" status="Shield TV" />
       </RoomSection>
 
       <RoomSection title="Garage">
-        <DeviceCard icon={MdGarage} title="garage" status="Closed" />
+        <DeviceCard icon={MdGarage} title="Garage Door" status="Closed" />
         <DeviceCard icon={MdThermostat} title="Freezer Temp" status="-6.5°" statusColor="statusBlue" />
-        <DeviceCard icon={MdHome} title="Help Unload" status="Off" />
+        <DeviceCard icon={MdLightbulb} title="Lights" status="Off" />
         <DeviceCard icon={MdDelete} title="Trash Day" status="In 5 Days" />
         <DeviceCard icon={MdRecycling} title="Recycling Day" status="In 12 Days" statusColor="statusGreen" />
-        <DeviceCard icon={MdDoorFront} title="Interior Door" status="Closed" />
+        <DeviceCard icon={MdDoorFront} title="Door" status="Closed" />
       </RoomSection>
 
       <RoomSection title="Master Bedroom">
@@ -46,7 +47,7 @@ export function DashboardContent() {
       </RoomSection>
 
       <RoomSection title="Front Door">
-        <DeviceCard icon={MdTimer} title="Last Motion" status="11min" />
+        <DeviceCard icon={MdTimer} title="Last Motion" status="11 minutes ago" />
         <DeviceCard icon={MdDoorFront} title="Front Door" status="Closed" />
         <DeviceCard icon={MdNotifications} title="Notifications" status="On" isActive statusColor="statusYellow" />
       </RoomSection>

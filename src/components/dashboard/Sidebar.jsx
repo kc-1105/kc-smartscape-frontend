@@ -1,15 +1,16 @@
 "use client"
 
-import { MdHome, MdLightbulb, MdGroup, MdNetworkWifi, MdSettings } from "react-icons/md"
+import { MdHome, MdInsertChart, MdLocalPolice, MdOutlineDevicesOther, MdSettings, MdChat } from "react-icons/md"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import styles from "./Sidebar.module.css"
 
 const navigation = [
   { name: "Home", href: "/dashboard", icon: MdHome },
-  { name: "Lighting Scenes", href: "/dashboard/lighting", icon: MdLightbulb },
-  { name: "Family", href: "/dashboard/family", icon: MdGroup },
-  { name: "Network", href: "/dashboard/network", icon: MdNetworkWifi },
+  { name: "Consumption Analysis", href: "/dashboard/consumption-analysis", icon: MdInsertChart },
+  { name: "Emergency Controls", href: "/dashboard/emergency-controls", icon: MdLocalPolice },
+  { name: "Device Controls", href: "/dashboard/device-controls", icon: MdOutlineDevicesOther },
+  { name: "Customer Support", href: "/dashboard/customer-support", icon: MdChat },
   { name: "Settings", href: "/dashboard/settings", icon: MdSettings },
 ]
 
