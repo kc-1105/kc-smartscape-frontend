@@ -1,5 +1,4 @@
-"use client"
-
+import { useState } from "react"
 import {
   MdAir,
   MdLightbulb,
@@ -14,12 +13,32 @@ import {
   MdGarage,
   MdWindPower,
   MdSettingsRemote,
+  MdBed,
+  MdChair,
 } from "react-icons/md"
 import { DeviceCard } from "./DeviceCard"
 import { RoomSection } from "./RoomSection"
 import styles from "./DashboardContent.module.css"
 
+const bedroomDevices = {
+  "Master Bedroom": [
+    { icon: MdWindPower, title: "Ceiling Fan", status: "Medium", isActive: true, statusColor: "statusBlue" },
+    { icon: MdDoorFront, title: "Winkey", status: "Docked" },
+    { icon: MdLightbulb, title: "Bedside Lamp", status: "Off" },
+  ],
+  "Guest Bedroom": [
+    { icon: MdLightbulb, title: "Main Light", status: "Off" },
+    { icon: MdAir, title: "AC", status: "72°F", statusColor: "statusBlue" },
+  ],
+  "Kids' Bedroom": [
+    { icon: MdLightbulb, title: "Night Light", status: "On", statusColor: "statusYellow" },
+    { icon: MdBed, title: "Smart Bed", status: "Occupied" },
+    { icon: MdChair, title: "Study Lamp", status: "Off" },
+  ],
+}
+
 export function DashboardContent() {
+  const [selectedBedroom, setSelectedBedroom] = useState("Master Bedroom")
   return (
     <>
       <RoomSection title="Living Room">
@@ -41,9 +60,17 @@ export function DashboardContent() {
         <DeviceCard icon={MdDoorFront} title="Door" status="Closed" />
       </RoomSection>
 
-      <RoomSection title="Master Bedroom">
-        <DeviceCard icon={MdWindPower} title="Ceiling Fan" status="Medium" isActive statusColor="statusBlue" />
-        <DeviceCard icon={MdDoorFront} title="Door" status="Locked" />
+      <RoomSection title={selectedBedroom} rooms={Object.keys(bedroomDevices)} handleRoomChange={setSelectedBedroom}>
+        {bedroomDevices[selectedBedroom].map((device, index) => (
+          <DeviceCard
+            key={index}
+            icon={device.icon}
+            title={device.title}
+            status={device.status}
+            isActive={device.isActive}
+            statusColor={device.statusColor}
+          />
+        ))}
       </RoomSection>
 
       <RoomSection title="Front Door">
@@ -65,4 +92,3 @@ export function DashboardContent() {
     </>
   )
 }
-

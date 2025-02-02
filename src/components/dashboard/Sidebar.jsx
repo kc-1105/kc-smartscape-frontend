@@ -1,5 +1,3 @@
-"use client"
-
 import { MdHome, MdInsertChart, MdLocalPolice, MdOutlineDevicesOther, MdSettings, MdChat } from "react-icons/md"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -43,7 +41,6 @@ export function Sidebar() {
           )
         })}
       </nav>
-
     </div>
   )
 }
