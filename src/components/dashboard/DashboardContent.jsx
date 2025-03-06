@@ -2,7 +2,6 @@ import { useState } from "react"
 import {
   MdAir,
   MdLightbulb,
-  MdHome,
   MdTv,
   MdDelete,
   MdRecycling,
