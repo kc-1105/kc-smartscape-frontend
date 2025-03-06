@@ -1,9 +1,15 @@
 import { FiChevronDown } from "react-icons/fi";
 import { useState } from "react";
-import styles from "./RoomSection.module.css"
+import styles from "./RoomSection.module.css";
 
 export function RoomSection({ title, rooms, handleRoomChange, children }) {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleRoomSelect = (room) => {
+    handleRoomChange(room);
+    setIsDropdownOpen(false);
+  };
+
   return (
     <div className={styles.roomSection}>
       <div className={styles.roomTitleWrapper}>
@@ -18,7 +24,7 @@ export function RoomSection({ title, rooms, handleRoomChange, children }) {
         {rooms && isDropdownOpen && (
           <div className={styles.dropdownMenu}>
             {rooms.map((room) => (
-              <button key={room} className={styles.dropdownItem} onClick={() => handleRoomChange(room)}>
+              <button key={room} className={styles.dropdownItem} onClick={() => handleRoomSelect(room)}>
                 {room}
               </button>
             ))}
@@ -27,5 +33,5 @@ export function RoomSection({ title, rooms, handleRoomChange, children }) {
       </div>
       <div className={styles.deviceGrid}>{children}</div>
     </div>
-  )
+  );
 }

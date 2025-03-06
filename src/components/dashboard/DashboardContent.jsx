@@ -1,9 +1,7 @@
 import { useState } from "react"
 import {
-  MdAir,
   MdLightbulb,
   MdTv,
-  MdDelete,
   MdRecycling,
   MdDoorFront,
   MdTimer,
@@ -11,28 +9,31 @@ import {
   MdThermostat,
   MdGarage,
   MdWindPower,
-  MdSettingsRemote,
   MdBed,
-  MdChair,
+  MdOutlineLight,
 } from "react-icons/md"
+import { LuHeater, LuLamp, LuLampDesk, LuProjector, LuWashingMachine, LuBlinds  } from "react-icons/lu";
+import { BsSpeaker } from "react-icons/bs";
+import { TbAirConditioning } from "react-icons/tb";
+import { FaPowerOff } from "react-icons/fa6";
 import { DeviceCard } from "./DeviceCard"
 import { RoomSection } from "./RoomSection"
 import styles from "./DashboardContent.module.css"
 
 const bedroomDevices = {
   "Master Bedroom": [
-    { icon: MdWindPower, title: "Ceiling Fan", status: "Medium", isActive: true, statusColor: "statusBlue" },
-    { icon: MdDoorFront, title: "Winkey", status: "Docked" },
-    { icon: MdLightbulb, title: "Bedside Lamp", status: "Off" },
+    { icon: LuBlinds, title: "Blinds", status: "Closed"},
+    { icon: MdDoorFront, title: "Door", status: "Locked" },
+    { icon: LuLampDesk, title: "Bedside Lamp", status: "Off" },
   ],
   "Guest Bedroom": [
     { icon: MdLightbulb, title: "Main Light", status: "Off" },
-    { icon: MdAir, title: "AC", status: "72°F", statusColor: "statusBlue" },
+    { icon: TbAirConditioning, title: "AC", status: "22°C", statusColor: "statusBlue" },
   ],
-  "Kids' Bedroom": [
-    { icon: MdLightbulb, title: "Night Light", status: "On", statusColor: "statusYellow" },
+  "Kids Bedroom": [
+    { icon: MdLightbulb, title: "Night Light", status: "On",isActive: true, statusColor: "statusYellow" },
     { icon: MdBed, title: "Smart Bed", status: "Occupied" },
-    { icon: MdChair, title: "Study Lamp", status: "Off" },
+    { icon: LuLampDesk , title: "Study Lamp", status: "Off" },
   ],
 }
 
@@ -41,22 +42,21 @@ export function DashboardContent() {
   return (
     <>
       <RoomSection title="Living Room">
-        <DeviceCard icon={MdLightbulb} title="Lamp" status="Off" />
-        <DeviceCard icon={MdAir} title="Heater" status="Off" />
+        <DeviceCard icon={LuLamp} title="Lamp" status="Off" />
+        <DeviceCard icon={LuHeater} title="Heater" status="Off" />
         <DeviceCard icon={MdWindPower} title="Ceiling Fan" status="Low" isActive statusColor="statusYellow" />
-        <DeviceCard icon={MdLightbulb} title="Pendant Lights" status="Off" />
-        <DeviceCard icon={MdTv} title="Home Theater" status="SHIELD" statusColor="statusGreen" />
-        <DeviceCard icon={MdNotifications} title="Media Volume" status="52.0%" statusColor="statusPink" />
-        <DeviceCard icon={MdSettingsRemote} title="Remote" status="Shield TV" />
+        <DeviceCard icon={MdOutlineLight} title="Pendant Lights" status="Off" />
+        <DeviceCard icon={MdTv} title="SONY TV" status="On" isActive statusColor="statusGreen" />
+        <DeviceCard icon={BsSpeaker} title="JBL GO 4" status="52% Battery" statusColor="statusPink" />
+        <DeviceCard icon={LuProjector} title="Epson Projector" status="Off" />
       </RoomSection>
 
       <RoomSection title="Garage">
         <DeviceCard icon={MdGarage} title="Garage Door" status="Closed" />
         <DeviceCard icon={MdThermostat} title="Freezer Temp" status="-6.5°" statusColor="statusBlue" />
         <DeviceCard icon={MdLightbulb} title="Lights" status="Off" />
-        <DeviceCard icon={MdDelete} title="Trash Day" status="In 5 Days" />
-        <DeviceCard icon={MdRecycling} title="Recycling Day" status="In 12 Days" statusColor="statusGreen" />
-        <DeviceCard icon={MdDoorFront} title="Door" status="Closed" />
+        <DeviceCard icon={MdRecycling} title="Recycling Day" status="In 5 Days" statusColor="statusGreen" />
+        <DeviceCard icon={LuWashingMachine} title="Washing Machine" status="Cycle Complete" isActive />
       </RoomSection>
 
       <RoomSection title={selectedBedroom} rooms={Object.keys(bedroomDevices)} handleRoomChange={setSelectedBedroom}>
@@ -74,18 +74,18 @@ export function DashboardContent() {
 
       <RoomSection title="Front Door">
         <DeviceCard icon={MdTimer} title="Last Motion" status="11 minutes ago" />
-        <DeviceCard icon={MdDoorFront} title="Front Door" status="Closed" />
+        <DeviceCard icon={MdDoorFront} title="Front Door" status="Locked" />
         <DeviceCard icon={MdNotifications} title="Notifications" status="On" isActive statusColor="statusYellow" />
       </RoomSection>
 
       <div className={styles.actionBar}>
         <button className={styles.actionButton}>
-          <MdLightbulb />
-          All Lights and Fans Off
+          <FaPowerOff />
+          Turn Off All Lights and Fans
         </button>
         <button className={styles.actionButton}>
           <MdTv />
-          Night time TV
+          Turn Off TV and Speakers
         </button>
       </div>
     </>
