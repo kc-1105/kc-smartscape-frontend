@@ -1,11 +1,11 @@
 import { DashboardContent } from "../../components/dashboard/DashboardContent"
-import DashboardNavbar from "../../components/navbar/DashboardNavbar"
+import { Sidebar } from "../../components/dashboard/Sidebar"
 import "../styles-kc.css"
 
 export default function DashboardPage() {
   return (
     <div className="dashboardLayout">
-      <DashboardNavbar />
+      <Sidebar />
       <main className="mainContent">
         <DashboardContent />
       </main>

@@ -45,7 +45,7 @@ body {
   background: linear-gradient(180deg, var(--oxford-blue) 0%, var(--space-cadet) 100%);
 }
 
-Scrollbar styles
+* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
 }
